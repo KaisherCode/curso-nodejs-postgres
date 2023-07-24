@@ -65,3 +65,53 @@ Verificamos is realmente está corriendo
 
   `docker-compose down`
 
+Conectando a docker vía terminal
+
+  `docker-compose exec postgres bash`
+
+  `psql -h localhost -d my_store -U nico`
+
+ Para ver estructura del DB
+
+  `\d+`
+
+  Para salir de la base datos
+
+  `\q`
+  
+  Luego para salir del contenedor
+
+  `exit`
+
+
+## Explorando Postgres: interfaces gráficas
+
+```jsx
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+    - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      -5050.80
+
+```
+
+Levantamos el servicio de pgadmin
+
+  `docker-compose up -d pgadmin`
+
+Luego abrimos en el browser 
+
+`http://localhost:5050/`
+
+En la terminal checkamos ip del docker 
+
+`docker ps`
+
+Inspeccionar ip con el comando: 7197f6a352ab (id del docker)
+
+`docker inspect 7197f6a352ab`
+
+
