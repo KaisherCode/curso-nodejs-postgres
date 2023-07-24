@@ -115,3 +115,9 @@ Inspeccionar ip con el comando: 7197f6a352ab (id del docker)
 `docker inspect 7197f6a352ab`
 
 
+## Integración de Node-postgres
+
+### Instalar
+
+´$ npm install pg´
+
