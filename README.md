@@ -121,3 +121,14 @@ Inspeccionar ip con el comando: 7197f6a352ab (id del docker)
 
 ´$ npm install pg´
 
+```jsx
+CREATE TABLE task (
+	id serial PRIMARY KEY,
+	title VARCHAR ( 250 ) NOT NULL,
+	completed boolean DEFAULT false
+);
+```
+
+## Instalar dotenv
+
+`npm i dotenv`
