@@ -147,3 +147,75 @@ Sequalize
  `npm install --save sequalize`
 
  `npm install --save pg pg-hstore # Postgres`
+
+
+## Cambiando la base datos a mysql
+
+En el archivo 'docker-compose' agregamos el siguiente código:
+
+````jsx
+mysql:
+    image: mysql:5
+    environment:
+      - MYSQL_DATABASE=my_store
+      - MYSQL_USER=nico
+      - MYSQL_ROOT_PASSWORD=admin123
+      - MYSQL_PORT=3306
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin123
+      - PMA_HOST=mysql
+
+    ports:
+      - 8080:80
+```
+
+Luego leventamos la base de datos
+
+  `docker-compose up -d mysql`
+
+Una vez terminado el proceso lo podemos ver si está corriendo
+
+`docker-compose ps`
+
+Luego levantamos el phpmyadmin
+
+`docker-compose up -d phpmyadmin`
+
+Nuevamente verificamos que si está corriendo
+
+`docker-compose ps`
+
+y podemos ver funcionando 4 servicios: 2 bases de datos una en postgres y otra en msql Ademas tenemos 2 motores graficos uno en pgadmin y otro en phpmyadmin.
+
+tenemos que instalar el driver
+
+`npm install --save mysql2`
+
+Editar el archivo .env DB_PORT=''
+```jsx
+
+PORT=3000
+DB_USER='root'
+DB_PASSWORD='admin123'
+DB_HOST='localhost'
+DB_NAME='my_store'
+DB_PORT='3306'
+
+```
+Cambiamos el motor de base de datos en el archivo sequelize.js
+
+```jsx
+...
+const URI = `mysql://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
+
+//...
+  dialect: 'mysql',
+// ...
+```
