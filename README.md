@@ -14,9 +14,11 @@ Ingresaamos a la carpeta del proyecto.
 
   `npm install`
 
-## Instalación de Docker
+## Base de datos
 
-### Instalación en Windows con WSL (Recomendada) 🐧
+### Instalación de Docker
+
+**Instalación en Windows con WSL (Recomendada) 🐧**
 
 Debes descargar el instalador desde la página de [docker for windows](https://docs.docker.com/desktop/install/windows-install/)
 
@@ -129,6 +131,19 @@ CREATE TABLE task (
 );
 ```
 
-## Instalar dotenv
+### Instalar dotenv
 
 `npm i dotenv`
+
+
+## Sequelize
+
+### ¿Qué es ORM? Instalación y configuración de Sequalize ORM
+
+Un ORM es un modelo de programación que permite mapear las estructuras de una base de datos relacionales.
+
+Sequalize
+
+ `npm install --save sequalize`
+
+ `npm install --save pg pg-hstore # Postgres`
