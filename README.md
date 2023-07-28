@@ -235,3 +235,13 @@ para correr migraciones sequelize tiene una librería que vamos a utilizar.
 `npm i sequelize-cli -D`o `npm i sequelize-cli --save-dev`
 
 luego creamos una archivo llamada '.sequelizerc'  
+
+
+corriendo una migración
+
+`npm run migrations:generate create-user`
+
+
+`npm run migrations:run`
+
+De esta manera podemos hacer migraciones en nuestra base de datos.
