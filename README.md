@@ -245,3 +245,7 @@ corriendo una migración
 `npm run migrations:run`
 
 De esta manera podemos hacer migraciones en nuestra base de datos.
+
+
+## Realaciones entre entidades
+
