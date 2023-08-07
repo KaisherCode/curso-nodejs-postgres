@@ -153,7 +153,7 @@ Sequalize
 
 En el archivo 'docker-compose' agregamos el siguiente código:
 
-````jsx
+```jsx
 mysql:
     image: mysql:5
     environment:
